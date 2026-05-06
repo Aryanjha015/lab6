@@ -31,12 +31,12 @@ jobs:
           echo "Unexpected output: $output"
           exit 1
         fi
-deploy:
-  needs: build-test
-  runs-on: ubuntu-latest
-  if: github.ref == 'refs/heads/main'
-  steps:
-  - name: Deploy Application
-    run: echo "Deploying application..."
-  - name: Post-deployment validation
-    run: echo "Deployment successful and verified!"
+  deploy:
+    needs: build-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - name: Deploy Application
+      run: echo "Deploying application..."
+    - name: Post-deployment validation
+      run: echo "Deployment successful and verified!"
